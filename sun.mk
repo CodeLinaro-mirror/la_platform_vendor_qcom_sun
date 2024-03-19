@@ -87,7 +87,7 @@ SYSTEMEXT_SEPARATE_PARTITION_ENABLE := true
 #true means QMAA is enabled for system
 #false means QMAA is disabled for system
 
-TARGET_USES_QMAA := true
+TARGET_USES_QMAA := false
 
 #QMAA flag which is set to incorporate any generic dependencies
 #required for the boot to UI flow in a QMAA enabled target.
@@ -136,6 +136,7 @@ TARGET_USES_QMAA_OVERRIDE_FTM := true
 TARGET_USES_QMAA_OVERRIDE_FASTRPC := true
 TARGET_USES_QMAA_OVERRIDE_SPU := true
 TARGET_USES_QMAA_OVERRIDE_UWB := true
+TARGET_USES_QMAA_OVERRIDE_SST_CLIENTS := true
 
 #Full QMAA HAL List
 QMAA_HAL_LIST := audio video camera display sensors gps
