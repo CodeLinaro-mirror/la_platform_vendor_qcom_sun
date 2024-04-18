@@ -38,6 +38,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Set GRF/Vendor freeze properties
 BOARD_SHIPPING_API_LEVEL := 34
 
+#Align ELF segment of binaries to 64k
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 65536
+
 # Set SoC manufacturer property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=QTI
@@ -170,10 +173,6 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 # Set kernel version and ion flags
 TARGET_KERNEL_VERSION := 5.15
 TARGET_USES_NEW_ION := true
-
-# Skip VINTF checks for kernel configs.
-# Kernel team remove this flag after dependencies are merged. b/272479887.
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Disable DLKM generation until build support is available
 TARGET_KERNEL_DLKM_DISABLE := true
@@ -540,6 +539,12 @@ PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \
                           mte_tests \
                           dynamic_memcpy_prebuilt
 ##Armv9-Tests##
+
+# TODO(b/330696629) remove this once device can drop HIDL.
+# This adds hwservicemanager and the allocator service to the device.
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service
 
 # Mediaserver 64 Bit enable
 PRODUCT_PROPERTY_OVERRIDES += \
