@@ -472,7 +472,6 @@ ifeq (true,$(BUILDING_WITH_VSDK))
     TARGET_SKIP_CURRENT_VNDK := true
     -include vendor/qcom/vsdk_snapshots_config/config.mk
 else
-    BOARD_VNDK_VERSION := current
     RECOVERY_SNAPSHOT_VERSION := current
     RAMDISK_SNAPSHOT_VERSION := current
 endif
