@@ -41,6 +41,9 @@ BOARD_SHIPPING_API_LEVEL := 34
 #Align ELF segment of binaries to 64k
 PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 65536
 
+#Enable AOSP to be page size agnostic
+PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
+
 # Set SoC manufacturer property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=QTI
@@ -469,7 +472,6 @@ ifeq (true,$(BUILDING_WITH_VSDK))
     TARGET_SKIP_CURRENT_VNDK := true
     -include vendor/qcom/vsdk_snapshots_config/config.mk
 else
-    BOARD_VNDK_VERSION := current
     RECOVERY_SNAPSHOT_VERSION := current
     RAMDISK_SNAPSHOT_VERSION := current
 endif
@@ -532,6 +534,8 @@ endif
 
 #qspa service
 PRODUCT_PACKAGES += vendor.qti.qspa-service qspa-testclient
+
+PRODUCT_PACKAGES += qspa_vendor.rc
 
 ##Armv9-Tests##
 PRODUCT_PACKAGES_DEBUG += bti_test_prebuilt \

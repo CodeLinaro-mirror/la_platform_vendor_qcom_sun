@@ -42,16 +42,6 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- DSP Service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.dsp</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDspService</name>
-            <instance>dspservice</instance>
-        </interface>
-    </hal>
     <!-- NFC HAL service -->
     <hal format="aidl">
         <name>android.hardware.nfc</name>
@@ -100,71 +90,13 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
             <instance>qti-tvm</instance>
         </interface>
     </hal>
-    <!-- fm -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.fm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IFmHci</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- WIGIG HAL service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.supptunnel</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISuppTunnelProvider</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- WIGIG network performance tuner service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.wigig.netperftuner</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INetPerfTuner</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <!-- SPU service-->
-    <hal format="hidl">
-        <name>vendor.qti.spu</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>ISPUManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.spu</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISPUManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.spu</name>
         <version>1</version>
         <interface>
             <name>ISPUManager</name>
             <instance>default</instance>
-        </interface>
-    </hal>
-    <!-- QCC HAL Service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qccvndhal</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQccvndhal</name>
-            <instance>qccvndhal</instance>
         </interface>
     </hal>
     <hal format="aidl">
