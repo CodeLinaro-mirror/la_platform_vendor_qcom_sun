@@ -31,17 +31,7 @@ Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 SPDX-License-Identifier: BSD-3-Clause-Clear
 ==========================================================================
 -->
-<manifest version="1.0" type="device" target-level="8">
-    <!-- CapabilityConfigStore HAL Service  -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.capabilityconfigstore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICapabilityConfigStore</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
+<manifest version="1.0" type="device" target-level="202404">
     <!-- NFC HAL service -->
     <hal format="aidl">
         <name>android.hardware.nfc</name>
@@ -67,22 +57,10 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
             <instance>default</instance>
         </interface>
     </hal>
-
-    <!-- Secure image data processor HAL Service -->
-    <hal format="hidl">
-        <name>vendor.qti.hardware.secureprocessor.device</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISecureProcessor</name>
-            <instance>qti-tee</instance>
-            <instance>qti-tvm</instance>
-        </interface>
-    </hal>
     <!-- SPU service-->
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.spu</name>
-        <version>1</version>
+        <version>2</version>
         <interface>
             <name>ISPUManager</name>
             <instance>default</instance>

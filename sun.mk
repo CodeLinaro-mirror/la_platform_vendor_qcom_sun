@@ -36,10 +36,10 @@ TARGET_CONSOLE_ENABLED ?=
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Set GRF/Vendor freeze properties
-BOARD_SHIPPING_API_LEVEL := 34
+BOARD_SHIPPING_API_LEVEL := 202404
 
-#Align ELF segment of binaries to 64k
-PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 65536
+#Align all 64-bit userspace ELF binaries to 16 KB
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 16384
 
 #Enable AOSP to be page size agnostic
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
@@ -173,8 +173,8 @@ AEye\
 AON\
 SnapdragonCamera\
 
-SHIPPING_API_LEVEL := 34
-PRODUCT_SHIPPING_API_LEVEL := 34
+SHIPPING_API_LEVEL := 35
+PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Set kernel version and ion flags
 TARGET_KERNEL_VERSION := 5.15

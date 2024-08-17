@@ -13,7 +13,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo300
+TARGET_CPU_VARIANT := oryon
 
 TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
@@ -31,7 +31,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 
 -include $(QCPATH)/common/sun/BoardConfigVendor.mk
 
-SECTOOLS_SECURITY_PROFILE := $(QCPATH)/securemsm/security_profiles/sun_tz_security_profile.xml
+SECTOOLS_SECURITY_PROFILE := $(QCPATH)/securemsm/security_profiles/sun_tz_security_profile.xml $(QCPATH)/securemsm/security_profiles/tuna_tz_security_profile.xml $(QCPATH)/securemsm/security_profiles/kera_tz_security_profile.xml
 
 USE_OPENGL_RENDERER := true
 
