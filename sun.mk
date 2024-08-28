@@ -406,8 +406,10 @@ else
 TARGET_USES_QCV := true
 endif
 
-DEVICE_MANIFEST_SKUS := sun
+DEVICE_MANIFEST_SKUS := sun tuna kera
 DEVICE_MANIFEST_SUN_FILES := device/qcom/sun/manifest_sun.xml
+DEVICE_MANIFEST_TUNA_FILES := device/qcom/sun/manifest_tuna.xml
+DEVICE_MANIFEST_KERA_FILES := device/qcom/sun/manifest_kera.xml
 
 DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 
