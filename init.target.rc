@@ -85,8 +85,17 @@ on fs
 
 on post-fs
     #Execute virtualization manager
-    enable vendor.qvirtservice_rs
-    start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=false
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+    on property:ro.vendor.vm.ssr.enable=true
+        enable vendor.qvirtservice_rs
+        start  vendor.qvirtservice_rs
+        enable vendor.qvirtvendorservice
+        start  vendor.qvirtvendorservice
 
 on late-fs
     #exec_start wait_for_keymaster
@@ -94,6 +103,8 @@ on late-fs
 
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
+    # Wait (1 second at most) for 'fs_ready' entry to be created
+    wait /sys/kernel/cnss/fs_ready 1
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
 
