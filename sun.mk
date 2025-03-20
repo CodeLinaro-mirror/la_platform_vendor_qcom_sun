@@ -19,6 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.m
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
 
+#Disable the 16K page size checks
+PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := false
+
+
 # Enable debugfs restrictions
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
@@ -36,7 +40,7 @@ TARGET_CONSOLE_ENABLED ?=
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Set GRF/Vendor freeze properties
-BOARD_SHIPPING_API_LEVEL := 202404
+BOARD_SHIPPING_API_LEVEL := 202504
 
 #Align all 64-bit userspace ELF binaries to 16 KB
 PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 16384
@@ -80,8 +84,6 @@ BOARD_ABL_SIMPLE := false
 else
 BOARD_ABL_SIMPLE := true
 endif
-
-NEED_AIDL_NDK_PLATFORM_BACKEND := true
 
 # Set SYSTEMEXT_SEPARATE_PARTITION_ENABLE if was not already set (set earlier via build.sh).
 SYSTEMEXT_SEPARATE_PARTITION_ENABLE := true
@@ -168,14 +170,16 @@ JAVA_IN_VENDOR_SOONG_WHITE_LIST :=\
 CuttlefishService\
 pasrservice\
 VendorPrivAppPermissionTest\
+MediaDrmAPITest\
+CastSignAPITest\
 
 JAVA_IN_VENDOR_MAKE_WHITE_LIST :=\
 AEye\
 AON\
 SnapdragonCamera\
 
-SHIPPING_API_LEVEL := 35
-PRODUCT_SHIPPING_API_LEVEL := 35
+SHIPPING_API_LEVEL := 36
+PRODUCT_SHIPPING_API_LEVEL := 36
 
 # Set kernel version and ion flags
 TARGET_KERNEL_VERSION := 5.15
