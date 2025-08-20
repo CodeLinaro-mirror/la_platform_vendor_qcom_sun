@@ -105,6 +105,8 @@ VENDOR_MACRO_WHITELIST = {
     "vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk",
     "vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk",
     "vendor/qcom/opensource/dataipa/dataipa_dlkm_vendor_board.mk",
+    "vendor/qcom/opensource/data-eth/dataeth_dlkm_vendor_board.mk",
+    "vendor/qcom/opensource/data-eth/dataeth_dlkm_vendor_product.mk",
     "vendor/qcom/opensource/datarmnet-ext/datarmnet_ext_dlkm_vendor_board.mk",
     "vendor/qcom/opensource/datarmnet/datarmnet_dlkm_vendor_board.mk",
     "vendor/qcom/opensource/display-drivers/display_driver_board.mk",
