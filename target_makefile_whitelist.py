@@ -90,7 +90,8 @@ VENDOR_FOREACH_WHITELIST = {
     "vendor/qcom/proprietary/bluetooth/build/bt-vendor-proprietary-product.mk",
     "vendor/qcom/proprietary/perf-core/profiles.mk",
     "vendor/qcom/proprietary/video/ship/video-vendor-modules.mk",
-
+    "vendor/qcom/defs/product-defs/vendor/dsp_kernel_product.mk",
+    "vendor/qcom/opensource/dsp-kernel/dsp_kernel_product.mk",
 }
 
 VENDOR_MACRO_WHITELIST = {
@@ -105,6 +106,9 @@ VENDOR_MACRO_WHITELIST = {
     "vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk",
     "vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk",
     "vendor/qcom/opensource/dataipa/dataipa_dlkm_vendor_board.mk",
+    "vendor/qcom/proprietary/data/rtl_firmware/dataeth_binary_vendor_product.mk",
+    "vendor/qcom/opensource/data-eth/dataeth_dlkm_vendor_board.mk",
+    "vendor/qcom/opensource/data-eth/dataeth_dlkm_vendor_product.mk",
     "vendor/qcom/opensource/datarmnet-ext/datarmnet_ext_dlkm_vendor_board.mk",
     "vendor/qcom/opensource/datarmnet/datarmnet_dlkm_vendor_board.mk",
     "vendor/qcom/opensource/display-drivers/display_driver_board.mk",
@@ -175,5 +179,6 @@ VENDOR_SOONG_WHITELIST = {
     "vendor/qcom/proprietary/chi-cdk/configs/product.mk",
     "vendor/qcom/proprietary/techpack/artifacts/xr/config/xr-artifacts-product-proprietary.mk",
     "vendor/qcom/proprietary/video/ship/video-vendor-modules.mk",
-
+    "vendor/qcom/defs/product-defs/vendor/dsp_kernel_product.mk",
+    "vendor/qcom/opensource/dsp-kernel/dsp_kernel_product.mk",
 }
